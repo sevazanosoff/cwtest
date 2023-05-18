@@ -72,6 +72,10 @@ const emailSlice = createSlice({
             // deleteEmail
             .addCase(deleteEmail.fulfilled, (state, action) => {
                 state.emails = state.emails.filter(email => email.id !== action.payload)
+                state.count -= 1;
+                if (state.emails.length === 0 && state.page > 1) {
+                    state.page -= 1;
+                }
             })
     },
 })

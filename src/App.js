@@ -4,10 +4,12 @@ import Auth from './pages/auth/Auth';
 import Register from './pages/auth/Register';
 import Email from './pages/email/Email';
 import EmailDetails from './pages/email/EmailDetails'
+import { useSelector } from 'react-redux';
 
 function App() {
   const location = useLocation()
   const navigate = useNavigate()
+  const authUser = useSelector(state => state.auth.user);
 
   useEffect(() => {
     if (!localStorage.getItem('user')) {
@@ -15,7 +17,7 @@ function App() {
         navigate('/login')
       }
     }
-  }, [navigate, location])
+  }, [navigate, location, authUser])
 
 
   return (

@@ -29,7 +29,7 @@ const Auth = () => {
             if (actionResult.payload) {
                 setLoginError(actionResult.payload.message)
             } else {
-                setLoginError('Registration error.')
+                setLoginError('Auth error.')
             }
         }
     }

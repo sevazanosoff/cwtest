@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { login, register } from './asyncActions';
 
 
-
 const authSlice = createSlice({
+
     name: 'auth',
     initialState: {
         user: null,
@@ -13,6 +13,7 @@ const authSlice = createSlice({
     reducers: {
         logout: (state) => {
             state.user = null;
+
         },
     },
     extraReducers: (builder) => {
